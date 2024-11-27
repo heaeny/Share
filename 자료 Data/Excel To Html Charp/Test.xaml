@@ -1,0 +1,229 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1253,2156" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:ce="clr-namespace:ClosedXML.Excel;assembly=ClosedXML" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>ClosedXML.Excel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>ClosedXML</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="896,2091" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ce:XLWorkbook" Name="xlSource" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="834,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="ce:XLWorkbook">
+          <CSharpReference x:TypeArguments="ce:XLWorkbook" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">xlSource</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="ce:XLWorkbook">
+          <CSharpValue x:TypeArguments="ce:XLWorkbook" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">new XLWorkbook("Config.xlsx")</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEach x:TypeArguments="ce:IXLWorksheet" CurrentIndex="{x:Null}" DisplayName="For Each currentIXLWorksheet" sap:VirtualizedContainerService.HintSize="834,1889" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="ce:IXLWorksheet">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ce:IXLWorksheet" Name="currentIXLWorksheet" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="800,1752" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEach x:TypeArguments="ce:IXLRow" CurrentIndex="{x:Null}" DisplayName="For Each currentIXLRow" sap:VirtualizedContainerService.HintSize="738,1500" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="ce:IXLRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ce:IXLRow" Name="currentIXLRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="704,1354" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If sap:VirtualizedContainerService.HintSize="642,1266" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Condition>
+                        <InArgument x:TypeArguments="x:Boolean">
+                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">currentIXLRow.IsHidden == false</CSharpValue>
+                        </InArgument>
+                      </If.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="608,1002" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:ForEach x:TypeArguments="ce:IXLCell" CurrentIndex="{x:Null}" DisplayName="For Each currentIXLCell" sap:VirtualizedContainerService.HintSize="546,750" sap2010:WorkflowViewState.IdRef="ForEach`1_3">
+                            <ui:ForEach.Body>
+                              <ActivityAction x:TypeArguments="ce:IXLCell">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="ce:IXLCell" Name="currentIXLCell" />
+                                </ActivityAction.Argument>
+                                <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="512,604" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <If sap:VirtualizedContainerService.HintSize="450,516" sap2010:WorkflowViewState.IdRef="If_2">
+                                    <If.Condition>
+                                      <InArgument x:TypeArguments="x:Boolean">
+                                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">! currentIXLCell.IsEmpty()</CSharpValue>
+                                      </InArgument>
+                                    </If.Condition>
+                                    <If.Then>
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+                                          <ui:LogMessage.Message>
+                                            <InArgument x:TypeArguments="x:Object">
+                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">currentIXLCell.Value</CSharpValue>
+                                            </InArgument>
+                                          </ui:LogMessage.Message>
+                                        </ui:LogMessage>
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
+                              </ActivityAction>
+                            </ui:ForEach.Body>
+                            <ui:ForEach.Values>
+                              <InArgument x:TypeArguments="sc:IEnumerable">
+                                <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">currentIXLRow.Cells()</CSharpValue>
+                              </InArgument>
+                            </ui:ForEach.Values>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:ForEach>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+                            <ui:LogMessage.Message>
+                              <InArgument x:TypeArguments="x:Object">
+                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">"New Row: " + currentIXLRow.Height</CSharpValue>
+                              </InArgument>
+                            </ui:LogMessage.Message>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+              <ui:ForEach.Values>
+                <InArgument x:TypeArguments="sc:IEnumerable">
+                  <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">currentIXLWorksheet.Rows()</CSharpValue>
+                </InArgument>
+              </ui:ForEach.Values>
+            </ui:ForEach>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="738,164" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+              <ui:LogMessage.Message>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">"New Sheet: " + currentIXLWorksheet.Name</CSharpValue>
+                </InArgument>
+              </ui:LogMessage.Message>
+            </ui:LogMessage>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <ui:ForEach.Values>
+        <InArgument x:TypeArguments="sc:IEnumerable">
+          <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">xlSource.Worksheets</CSharpValue>
+        </InArgument>
+      </ui:ForEach.Values>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
